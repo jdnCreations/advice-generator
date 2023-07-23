@@ -94,18 +94,18 @@ p {
   width: 64px;
   outline: none;
   border: none;
-  box-shadow: 0px 0px 40px hsla(var(--neon-green), .15);
   cursor: pointer;
+  transition: transform .5s ease-in-out;
 }
 
-.dice::after {
-  box-shadow: 0px 0px 40px hsla(var(--neon-green), 1);
-  opacity: 0;
-  transition: opacity 0.1s ease-in-out;
+.animateDice {
+  animation: rotateDice 1s 1;
 }
 
-.dice:hover:after {
-  opacity: 1;
+
+.dice:hover {
+  box-shadow: 0px 0px 40px hsla(var(--neon-green), .85);
+  
 }
 
 @media (min-width: 768px) {
@@ -115,5 +115,14 @@ p {
 
   .wrapper {
     padding: 2.5rem 3rem;
+  }
+}
+
+@keyframes rotateDice {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
